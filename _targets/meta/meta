@@ -1,0 +1,8 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+MonsterKillerFile|stem|f6bf5a5688fb274f|09442fac263aded2|2c530c1562a7fbd1|249742182|data/lipidomics.csv|t20388.6623554768s|s24313b|24313|file|local|vector|||0.02||
+number1|stem|a143271407304363|9c00e8bfdbd5f095|8e7ada130f2b94e9|517540204||t20424.5783938826s|s51b|51|rds|local|vector|||0||
+data|stem|9ccfb1e9cb25b059|54d04a9516834098|b8da78d1e3ad7797|33550471||t20424.5783946197s|s1745b|1745|rds|local|vector|||0||
+model|stem|2bf5d3def7cd98bc|693e4c90d947b5eb|e14c6db8c5fb2e6a|808688450||t20424.5783954863s|s108b|108|rds|local|vector|||0||
+MonsterMegaMultipier|function|711e9522ae16b77e
+MonsterKillerFile1|stem|f6bf5a5688fb274f|09442fac263aded2|2c530c1562a7fbd1|-229080585|data/lipidomics.csv|t20388.6623554768s|s24313b|24313|file|local|vector|||0||
+MonsterLipid|stem|5605746495fd40b6|359ae964ba99b954|d4f87adc700cfd5d|-1221715101||t20424.5853648286s|s4884b|4884|rds|local|vector|||0.25||

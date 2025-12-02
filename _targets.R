@@ -48,15 +48,50 @@ tar_option_set(
 tar_source()
 # tar_source("other_functions.R") # Source other scripts as needed.
 
+
+
 # Replace the target list below with your own:
 list(
   tar_target(
-    name = data,
-    command = tibble(x = rnorm(100), y = rnorm(100))
-    # format = "qs" # Efficient storage for general data objects.
+    name = MonsterKillerFile1,
+    command = "data/lipidomics.csv",
+    format = "file" # what, this is a monsterfile, thus we need to set the format
   ),
   tar_target(
-    name = model,
-    command = coefficients(lm(y ~ x, data = data))
+    name = MonsterLipid,
+    command = readr::read_csv(file = MonsterKillerFile1, show_col_types = F),
   )
+#  tar_target(
+#    name = MonsterLipid,
+#    command = create_table_descriptive_stats,
+#  ),
+#
+#
+
 )
+
+
+
+# to run the PIPELINES do <targets::tar_make()>
+
+#  run <targets::tar_visnetwork()> if you want to get the visualisation network for the target PIPELINE!
+
+# list(
+#   tar_target(
+#     name = number1,
+#     command = MonsterMegaMultipier(10,10)
+#   ),
+#   tar_target(
+#     name = data,
+#     command = tibble(x = rnorm(number1), y = rnorm(number1))
+#     # format = "qs" # Efficient storage for general data objects.
+#   ),
+#   tar_target(
+#     name = model,
+#     command = coefficients(lm(y ~ x, data = data))
+#   )
+# )
+#
+
+
+
