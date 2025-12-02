@@ -3,11 +3,16 @@ title: "Link_github"
 output: html_document
 ---
 
+Linking your project to GitHub
 
-
+# remeber to have a valid PAT ( see <https://github.com/settings/token> )
 
 ```{r}
 usethis::use_github()
 ```
 
+You can then open/browse your git repo with
 
+```{r}
+usethis::browse_github()
+```

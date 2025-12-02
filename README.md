@@ -1,10 +1,11 @@
 TODO: Add more to the title of your project here
 
-# AdvancedR3:
+# AdvancedR3: If it can not be reproduced why do it in the first place
 
 TODO: Give a brief description of what your project is about
 
-This project...
+This project is about a analysis of lipidomics data for me to learn how
+to mange my project like a champ
 
 # Brief description of folder and file contents
 
@@ -13,16 +14,16 @@ data, docs and R folders.
 
 The following folders contain:
 
--   `data/`:
--   `docs/`:
--   `R/`:
+-   `data/`: Holds the lipidomics.csv file from the experiment.
+-   `docs/`: Holds all documents.
+-   `R/`: Holds all R related dev or source functions.
 
 # Installing project R package dependencies
 
 If dependencies have been managed by using
 `usethis::use_package("packagename")` through the `DESCRIPTION` file,
-installing dependencies is as easy as opening the
-`AdvancedR3.Rproj` file and running this command in the console:
+installing dependencies is as easy as opening the `AdvancedR3.Rproj`
+file and running this command in the console:
 
 ```         
 # install.packages("pak")
