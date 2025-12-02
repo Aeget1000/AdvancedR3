@@ -5,7 +5,10 @@ Version: 0.0.1
 Encoding: UTF-8
 Imports: 
     dplyr,
+    fs,
     here,
     readxl,
     stringr,
     tidyr
+Suggests: 
+    usethis
