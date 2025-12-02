@@ -1,0 +1,13 @@
+---
+title: "Link_github"
+output: html_document
+---
+
+
+
+
+```{r}
+usethis::use_github()
+```
+
+

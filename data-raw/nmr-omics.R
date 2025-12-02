@@ -7,11 +7,10 @@ library(here)
 library(stringr) # we wer missing this!
 
 
-hiiiiii
 
 # Download dataset --------------------------------------------------------
 
-# From DOI: 10.5281/zenodo.6597902
+# From DOI: 10.5281/zenodo.6597902us
 # Direct URL: https://zenodo.org/record/6597902
 
 # Get both README and the Lipidomics dataset.
