@@ -5,7 +5,7 @@
 
 # Load packages required to define the pipeline:
 library(targets)
-# library(tarchetypes) # Load other packages as needed.
+library(tarchetypes) # Load other packages as needed.
 
 # Set target options:
 tar_option_set(
@@ -53,13 +53,18 @@ tar_source()
 # Replace the target list below with your own:
 list(
   tar_target(
-    name = MonsterKillerFile1,
+    name = file,
     command = "data/lipidomics.csv",
-    format = "file" # what, this is a monsterfile, thus we need to set the format
+    format = "file"
   ),
   tar_target(
-    name = MonsterLipid,
-    command = readr::read_csv(file = MonsterKillerFile1, show_col_types = F),
+    name = lipidomics,
+    command = readr::read_csv(file = file, show_col_types = F),
+  ),
+  tar_quarto(
+    name = quarto_doc,
+    path = "docs/lerning.qmd"
+
   )
 #  tar_target(
 #    name = MonsterLipid,

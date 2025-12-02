@@ -6,3 +6,6 @@ model|stem|2bf5d3def7cd98bc|693e4c90d947b5eb|e14c6db8c5fb2e6a|808688450||t20424.
 MonsterMegaMultipier|function|711e9522ae16b77e
 MonsterKillerFile1|stem|f6bf5a5688fb274f|09442fac263aded2|2c530c1562a7fbd1|-229080585|data/lipidomics.csv|t20388.6623554768s|s24313b|24313|file|local|vector|||0||
 MonsterLipid|stem|5605746495fd40b6|359ae964ba99b954|d4f87adc700cfd5d|-1221715101||t20424.5853648286s|s4884b|4884|rds|local|vector|||0.25||
+file|stem|f6bf5a5688fb274f|09442fac263aded2|2c530c1562a7fbd1|1735323524|data/lipidomics.csv|t20388.6623554768s|s24313b|24313|file|local|vector|||0||
+lipidomics|stem|5605746495fd40b6|a08d7b52cac06114|f0e124423009cc2f|-1498393010||t20424.6140364487s|s4884b|4884|rds|local|vector|||1.33||
+quarto_doc|stem|601fb519c4fd08e7|60dcc9cf2cf48ed2|0197a2194e612305|1582462002|docs/lerning.html*docs/lerning.qmd|t20424.6189153633s|s20455b|20455|file|local|vector|||6.97||

@@ -7,8 +7,10 @@ Imports:
     dplyr,
     fs,
     here,
+    quarto,
     readxl,
     stringr,
+    tarchetypes,
     targets,
     tidyr
 Suggests: 
