@@ -12,7 +12,7 @@ library(targets)
 source(here::here("R/functions.R")) # soruce to the function file, where all of our favorite fun's live
 
 
-tar_config_set(store= here::here("_targets"))  #tell R to look in the <_targets>folder
+tar_config_set(store = here::here("_targets")) # tell R to look in the <_targets>folder
 
 lipidomics <- tar_read(lipidomics)
 ```
@@ -20,16 +20,25 @@ lipidomics <- tar_read(lipidomics)
 ## make my beautiful table
 
 ```{r}
-
 lipidomics |>
   group_by(metabolite) |>
-  summarise(across(value, 
-                   list(mean = mean, sd = sd) )
-            ) |>
-  mutate(across(where(is.numeric), \(x) formatC(x, digits = 2, format = "f"))) |> # what does \(x) mean?
-  mutate(MeanSD = glue::glue(  "{value_mean}  ({value_sd})" )) |>
+  summarise(across(
+    value,
+    list(mean = mean, sd = sd)
+  )) |>
+  mutate(across(where(is.numeric), function(x) formatC(x, digits = 2, format = "f"))) |>
+  mutate(MeanSD = glue::glue("{value_mean}  ({value_sd})")) |>
   select(Metabolite = metabolite, `Mean SD` = MeanSD)
+```
 
+across() applies a function to multiple columns. where(is.numeric)
+selects all numeric columns. (x) formatC(x, digits = 2, format = "f")
+formats each numeric column to 2 decimal places using formatC().
 
+```{r}
 
+```
+
+```{r}
+create_table_descriptive_stats(lipidomics)
 ```
