@@ -62,19 +62,24 @@ list(
   ),
   tar_target(
     name = lipidomics,
-    command = readr::read_csv(file = file, show_col_types = F),
+    command = readr::read_csv(file = file, show_col_types = F) |>
+      clean() # Askepot !!
   ),
   tar_quarto(
     name = quarto_doc,
     path = "docs/lerning.qmd"
-
   ),
   tar_target(
     name = table_descriptive_stats,
     command = create_table_descriptive_stats(lipidomics)
+  ),
+  tar_target(
+    name = plot_distributions,
+    command = create_plot_distributions(lipidomics)
   )
 
 )
+
 
 
 

@@ -4,6 +4,7 @@
 ## My notes ##
 # Source the R/functions.R file with < Ctrl-Shift-S >
 # Use roxygen documentation  with < Ctrl-Shift-Alt-R >
+# To check off all staged documents in the Git then do < Ctrl + A > then press the "space bar" twice
 
 
 #' A function that makes a beautiful with Metabolite - Mean SD
@@ -23,17 +24,34 @@ create_table_descriptive_stats <-
 
 
 
-#' A super function that takes a data.frame/tibble and use ggplot2 to make histogram for each value, with free sclaes
+#' A super function that takes a data.frame/tibble and use ggplot2
+#' to make histogram for each value, with free sclaes
 #'
 #' @param data
 #'
 #' @returns A beautiful histogram object
-
-create_plot_distributions <- function(data) {
-  ggplot2::ggplot(
-    data,
-    ggplot2::aes(x = value, colour = "pink")
-  ) +
+create_plot_distributions <-
+  function(data) {
+  data |>
+    ggplot2::ggplot(ggplot2::aes(x = value, colour = "pink")) +
     ggplot2::geom_histogram(bins = 40) +
     ggplot2::facet_wrap(dplyr::vars(metabolite), scales = "free")
 }
+
+
+
+
+
+
+#' "Askepot Askepot, clean my data!"
+#'
+#' @param data
+#'
+#' @returns Very clean data
+clean <- function(data) {
+  data |>
+    dplyr::group_by(dplyr::pick(-value)) |>
+    dplyr::summarise(value = mean(value), .groups = "keep") |>
+    dplyr::ungroup()
+}
+

@@ -21,21 +21,45 @@ lipidomics <- tar_read(lipidomics)
 ## results; basic stats table
 
 ```{r}
-
 tar_read(table_descriptive_stats) |>
-  knitr::kable( caption = " Title:The mean and SD of metablolites in the lipidomic dataset", )
-
+  knitr::kable(caption = " Title:The mean and SD of metablolites in the lipidomic dataset", )
 ```
 
 ## The Plot of distributions that no one saw coming
 
 ```{r}
+tar_read(plot_distributions)    #d
+```
 
-ggplot2::ggplot(lipidomics,
-                ggplot2::aes(x=value, colour = "pink")) +
-  ggplot2::geom_histogram(bins = 40 )+
-  ggplot2::facet_wrap(dplyr::vars(metabolite), scales = "free")
-  
+## Preparing the data
+
+```{r}
+
+lipidomics |>
+  count(code, metabolite) |>
+  filter(n > 1)
+# oh no, why did they mesure cholesterol 3 times?
+# lets solve that issue!
+```
+
+## Compute mean of dublicated metabolites
+
+```{r}
+lipidomics |>
+  dplyr::group_by(dplyr::pick(-value)) |> # what the hell does group_by do ?
+  dplyr::summarise(value = base::mean(value), .groups = "keep") |>
+  dplyr::ungroup()
 
 
+```
+
+```{r}
+clean <- function(data) {
+  data |>
+    dplyr::group_by(dplyr::pick(-value)) |>
+    dplyr::summarise(value = mean(value), .groups = "keep") |>
+    dplyr::ungroup()
+}
+
+clean(lipidomics)
 ```
