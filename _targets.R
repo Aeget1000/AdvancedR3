@@ -65,26 +65,22 @@ list(
     name = quarto_doc,
     path = "docs/lerning.qmd"
 
+  ),
+  tar_target(
+    name = table_descriptive_stats,
+    command = create_table_descriptive_stats(lipidomics)
   )
-#  tar_target(
-#    name = MonsterLipid,
-#    command = create_table_descriptive_stats,
-#  ),
-#
-#
 
 )
 
 
 
-# to run the PIPELINES do <targets::tar_make()>
+# to run the PIPELINES do:
+# targets::tar_make()
 
-#  run <targets::tar_visnetwork()> if you want to get the visualisation network for the target PIPELINE!
-
-
-
-
-
+#  run:
+# targets::tar_visnetwork()
+# if you want to get the visualisation network for the target PIPELINE!
 
 
 
@@ -94,22 +90,10 @@ list(
 
 
 
-# list(
-#   tar_target(
-#     name = number1,
-#     command = MonsterMegaMultipier(10,10)
-#   ),
-#   tar_target(
-#     name = data,
-#     command = tibble(x = rnorm(number1), y = rnorm(number1))
-#     # format = "qs" # Efficient storage for general data objects.
-#   ),
-#   tar_target(
-#     name = model,
-#     command = coefficients(lm(y ~ x, data = data))
-#   )
-# )
-#
+
+
+
+
 
 
 

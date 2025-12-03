@@ -8,4 +8,6 @@ MonsterKillerFile1|stem|f6bf5a5688fb274f|09442fac263aded2|2c530c1562a7fbd1|-2290
 MonsterLipid|stem|5605746495fd40b6|359ae964ba99b954|d4f87adc700cfd5d|-1221715101||t20424.5853648286s|s4884b|4884|rds|local|vector|||0.25||
 file|stem|f6bf5a5688fb274f|09442fac263aded2|2c530c1562a7fbd1|1735323524|data/lipidomics.csv|t20388.6623554768s|s24313b|24313|file|local|vector|||0||
 lipidomics|stem|5605746495fd40b6|a08d7b52cac06114|f0e124423009cc2f|-1498393010||t20424.6140364487s|s4884b|4884|rds|local|vector|||1.33||
-quarto_doc|stem|a6f520d0cff1116f|60dcc9cf2cf48ed2|0197a2194e612305|1582462002|docs/lerning.html*docs/lerning.qmd|t20425.361861986s|s25362b|25362|file|local|vector|||16.17||
+create_table_descriptive_stats|function|81469293fb098d28
+quarto_doc|stem|86b85429460ab3c2|60dcc9cf2cf48ed2|0197a2194e612305|1582462002|docs/lerning.html*docs/lerning.qmd|t20425.3837915625s|s26319b|26319|file|local|vector|||17.4||
+table_descriptive_stats|stem|7987c63954d220a4|34e33bc9eaef7fce|47f5632ab97911f3|1291134815||t20425.383796944s|s440b|440|rds|local|vector|||0.04||

@@ -1,5 +1,5 @@
 # super clean and tested functions live here
-
+# Source the R/functions.R file with Ctrl-Shift-S
 
 #' A function that makes a beautiful with Metabolite - Mean SD
 #'
@@ -11,27 +11,9 @@ create_table_descriptive_stats <-
     data |>
       dplyr::group_by(metabolite) |>
       dplyr::summarise(across(value, list(mean = mean, sd = sd))) |>
-      dplyr::mutate(across(where(is.numeric), function(x) formatC(x, digits = 2, format = "f"))) |>
+      dplyr::mutate(across(tidyselect::where(is.numeric), function(x) formatC(x, digits = 2, format = "f"))) |>
       dplyr::mutate(MeanSD = glue::glue("{value_mean}  ({value_sd})")) |>
       dplyr::select(Metabolite = metabolite, `Mean SD` = MeanSD)
   }
-
-
-#
-#  # My stupid function that multipliers two numbers
-#  MonsterMegaMultipier <- function(element1, element2){
-#    r <- element1*element2
-#    return(r)
-#  }
-#
-
-
-
-
-
-
-
-
-
 
 
