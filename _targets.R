@@ -1,3 +1,6 @@
+# A "pipeline" should be 100p automatic, thus we use _targets !
+
+
 # Created by use_targets().
 # Follow the comments below to fill in this target script.
 # Then follow the manual to check and run the pipeline:
@@ -78,22 +81,9 @@ list(
 # to run the PIPELINES do:
 # targets::tar_make()
 
-#  run:
+# run:
 # targets::tar_visnetwork()
 # if you want to get the visualisation network for the target PIPELINE!
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

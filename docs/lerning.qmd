@@ -5,6 +5,8 @@ format: html
 editor: visual
 ---
 
+## Inital setup
+
 ```{r setup}
 library(tidyverse)
 library(targets)
@@ -14,4 +16,26 @@ source(here::here("R/functions.R")) # soruce to the function file, where all of 
 tar_config_set(store = here::here("_targets")) # tell R to look in the <_targets>folder
 
 lipidomics <- tar_read(lipidomics)
+```
+
+## results; basic stats table
+
+```{r}
+
+tar_read(table_descriptive_stats) |>
+  knitr::kable( caption = " Title:The mean and SD of metablolites in the lipidomic dataset", )
+
+```
+
+## The Plot of distributions that no one saw coming
+
+```{r}
+
+ggplot2::ggplot(lipidomics,
+                ggplot2::aes(x=value, colour = "pink")) +
+  ggplot2::geom_histogram(bins = 40 )+
+  ggplot2::facet_wrap(dplyr::vars(metabolite), scales = "free")
+  
+
+
 ```
