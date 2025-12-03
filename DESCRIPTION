@@ -6,6 +6,7 @@ Encoding: UTF-8
 Imports: 
     dplyr,
     fs,
+    glue,
     here,
     quarto,
     readxl,
@@ -19,3 +20,5 @@ Suggests:
     usethis
 URL: https://github.com/Aeget1000/AdvancedR3
 BugReports: https://github.com/Aeget1000/AdvancedR3/issues
+Depends: 
+    tidyverse
