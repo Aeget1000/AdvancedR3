@@ -79,7 +79,7 @@ list(
   ),
   tar_target(
     name = model_results,
-    command = create_model_results(lipidomics,"PUFA")
+    command = create_model_results(lipidomics)
   )
 
 )

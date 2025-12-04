@@ -10,11 +10,12 @@ file|stem|f6bf5a5688fb274f|09442fac263aded2|2c530c1562a7fbd1|1735323524|data/lip
 lipidomics|stem|1097d7d6b88d915d|ad5d16ed7b2b8678|a76a8c5ad9b72de1|-1498393010||t20425.5847029501s|s4136b|4136|rds|local|vector|||2.2||
 plot_distributions|stem|4f6e279b99de91d8|01ce942be37808d6|e4a1130e0cfe5a58|222080706||t20425.5847259169s|s149148b|149148|rds|local|vector|||1.64||
 table_descriptive_stats|stem|9e3dee6ea67a4fa4|34e33bc9eaef7fce|5d070cfa3c6cf8f4|1291134815||t20425.5847280182s|s443b|443|rds|local|vector|||0.03||
-model_results|stem|7fe9d3784942e9af|4d44a0483ed2f21d|19ac8ea00453df63|-1523611067||t20425.6449802752s|s308b|308|rds|local|vector|||0.43||
-quarto_doc|stem|d9258f96b420f4cd|6d7fb5e0aa31038c|cce57284650a633e|1582462002|docs/lerning.html*docs/lerning.qmd|t20425.6452181251s|s44002b|44002|file|local|vector|||19.01||
-fit_model|function|a339735c0120c2b1
+model_results|stem|3018a3c057afda31|8dc321a94f7f9089|fe073ebcc538ebf5|-1523611067||t20426.4206104911s|s2771b|2771|rds|local|vector|||1.27|glm.fit: fitted probabilities numerically 0 or 1 occurred. glm.fit: algorithm did not converge. glm.fit: fitted probabilities numerically 0 or 1 occurred. glm.fit: algorithm did not converge. glm.fit: fitted probabilities numerically 0 or 1 occurred. glm.fit: fitted probabilities numerically 0 or 1 occurred|
+fit_model|function|e0fcf73f9c0eeb40
 preprocess|function|27efdd529f320467
 clean|function|ce06151f5b2133d2
 create_table_descriptive_stats|function|81469293fb098d28
 create_plot_distributions|function|275e6f5a694e5c3f
-create_model_results|function|8443ce4a272d3ab0
+fit_all_models|function|2d6272677f0abde8
+create_model_results|function|9ab3eeb0fa7f6d6b
+quarto_doc|stem|630e53add9ae845a|a9b001ac64ef98d7|73bbef3162b646d8|1582462002|docs/lerning.html*docs/lerning.qmd|t20426.4248066189s|s53960b|53960|file|local|vector|||14.35||

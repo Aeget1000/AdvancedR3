@@ -89,20 +89,6 @@ fit_model <- function(data, model) {
 }
 
 
-#' Fun that runs the preprocess and the fitmodel, on a predefined metabolite
-#'
-#' @param data a tibble
-#' @param WhatIsYourFavoriteMetabolite  as chr
-#'
-#' @returns A tibble
-create_model_results <- function(data = lipidomics, WhatIsYourFavoriteMetabolite) {
-  data |>
-    dplyr::filter(metabolite == WhatIsYourFavoriteMetabolite) |>
-    preprocess() |>
-    fit_model()
-}
-
-
 #' A fun that make to modle formulas
 #'
 #' @param data
@@ -116,3 +102,19 @@ fit_all_models <- function(data) {
     purrr::map(\(model_) fit_model(data, model = model_)) |>
     purrr::list_rbind()
 }
+
+
+#' Fun that runs the preprocess and the fit a model to each metabolite
+#'
+#' @param data a tibble
+#'
+#' @returns A tibble
+create_model_results <- function(data) {
+  data |>
+    dplyr::group_split(metabolite) |> # first split the complete dataset into new tibbles in a list based on the unique metabolites
+    purrr::map(preprocess) |> # Center and scale all $values column in each dataset
+    purrr::map(fit_all_models) |>
+    purrr::list_rbind()
+}
+
+

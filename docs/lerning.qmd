@@ -22,7 +22,7 @@ lipidomics <- tar_read(lipidomics)
 
 ```{r}
 tar_read(table_descriptive_stats) |>
-  knitr::kable(caption = " Title:The mean and SD of metablolites in the lipidomic dataset", )
+  knitr::kable(caption = " Title:The mean and SD of metablolites in the lipidomic dataset")
 ```
 
 ## The Plot of distributions that no one saw coming
@@ -31,27 +31,9 @@ tar_read(table_descriptive_stats) |>
 tar_read(plot_distributions)
 ```
 
-## Runing mutliple models
+## Appendix
 
 ```{r}
-
-
-
-```
-
-```{r}
-
-lipidomics |>
-  filter(metabolite == "Cholesterol") |>
-  preprocess() |> 
-  fit_all_models()
-
-```
-
-```{r}
-lipidomics |>
-  dplyr::group_split(metabolite) |> # first split the complete dataset into new tibbles base on the metabolites
-  purrr::map(preprocess ) |>
-  purrr::map(fit_all_models) |> 
-  purrr::list_rbind()
+tar_read(model_results)|>
+  knitr::kable(caption = " Title: Super nice table of multiple modles, however, please dont look at the p-values")
 ```
