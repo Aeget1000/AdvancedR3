@@ -63,7 +63,7 @@ list(
   tar_target(
     name = lipidomics,
     command = readr::read_csv(file = file, show_col_types = F) |>
-      clean() # Askepot !!
+      clean() # Askepot, comes to clean the Cholesterol metabolite because it it the only element that is mesured 3 times for each patient
   ),
   tar_quarto(
     name = quarto_doc,
@@ -76,6 +76,10 @@ list(
   tar_target(
     name = plot_distributions,
     command = create_plot_distributions(lipidomics)
+  ),
+  tar_target(
+    name = model_results,
+    command = create_model_results(lipidomics,"PUFA")
   )
 
 )

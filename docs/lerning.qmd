@@ -28,38 +28,30 @@ tar_read(table_descriptive_stats) |>
 ## The Plot of distributions that no one saw coming
 
 ```{r}
-tar_read(plot_distributions)    #d
+tar_read(plot_distributions)
 ```
 
-## Preparing the data
+## Runing mutliple models
+
+```{r}
+
+
+
+```
 
 ```{r}
 
 lipidomics |>
-  count(code, metabolite) |>
-  filter(n > 1)
-# oh no, why did they mesure cholesterol 3 times?
-# lets solve that issue!
-```
+  filter(metabolite == "Cholesterol") |>
+  preprocess() |> 
+  fit_all_models()
 
-## Compute mean of dublicated metabolites
+```
 
 ```{r}
 lipidomics |>
-  dplyr::group_by(dplyr::pick(-value)) |> # what the hell does group_by do ?
-  dplyr::summarise(value = base::mean(value), .groups = "keep") |>
-  dplyr::ungroup()
-
-
-```
-
-```{r}
-clean <- function(data) {
-  data |>
-    dplyr::group_by(dplyr::pick(-value)) |>
-    dplyr::summarise(value = mean(value), .groups = "keep") |>
-    dplyr::ungroup()
-}
-
-clean(lipidomics)
+  dplyr::group_split(metabolite) |> # first split the complete dataset into new tibbles base on the metabolites
+  purrr::map(preprocess ) |>
+  purrr::map(fit_all_models) |> 
+  purrr::list_rbind()
 ```
