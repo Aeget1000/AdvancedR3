@@ -31,9 +31,31 @@ tar_read(table_descriptive_stats) |>
 tar_read(plot_distributions)
 ```
 
+## Figure of models estiames
+
+```{r}
+model_results <- tar_read(model_results)
+model_results
+```
+
+```{r}
+model_results |>
+  dplyr::filter(term == "value", std.error <= 2, estimate <= 5) |>
+  dplyr::select(metabolite, model, estimate, std.error) |>
+  ggplot2::ggplot(aes(
+    x = estimate,
+    y = metabolite,
+    xmin = estimate - std.error,
+    xmax = estimate + std.error
+  )) +
+  geom_pointrange() +
+  geom_vline(xintercept = 1, linetype = "dashed") +
+  facet_grid(cols = vars(model))
+```
+
 ## Appendix
 
 ```{r}
-tar_read(model_results)|>
-  knitr::kable(caption = " Title: Super nice table of multiple modles, however, please dont look at the p-values")
+tar_read(model_results) |>
+  knitr::kable(caption = " Title: Super nice table of multiple modles, however, please dont look at the p-values. here the terms are the ´predictor values´ ")
 ```
